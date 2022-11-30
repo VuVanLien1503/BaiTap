@@ -43,18 +43,19 @@
         setY(y){
             this.y=y;
         }
-        setColor(){
-            this.color=this.color;
+        setColor(color){
+            this.color=color;
         }
-         drawRectangle(){
-            let canvas = document.getElementById("drawRectangle");
-            let ctx = canvas.getContext('2d');
+         drawRectangle(canvas){
+            let canvass=document.getElementById(canvas)
+            let ctx = canvass.getContext('2d');
             ctx.fillStyle = this.getColor();
             ctx.fillRect(this.x, this.y, this.width, this.height)
         }
     }
+    let canvas="drawRectangle";
     let rectangle=new Rectangle(300,200,10,10,"red")
-    rectangle.drawRectangle();
+    rectangle.drawRectangle(canvas);
 
 
 </script>
