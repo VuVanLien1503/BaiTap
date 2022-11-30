@@ -9,9 +9,21 @@
 <script>
 
     class Rectangle{
-        constructor(width,height) {
+        constructor(width,height,x,y,color) {
             this.width=width;
             this.height=height;
+            this.x=x;
+            this.y =y;
+            this.color=color;
+        }
+        getX(){
+            return this.x;
+        }
+        getY(){
+             return this.y;
+        }
+        getColor(){
+            return this.color;
         }
         getWidth(){
             return this.width;
@@ -25,14 +37,23 @@
         setHeight(height){
             this.height=height
         }
-         drawRectangle(width,height){
+        setX(x){
+            this.x=x;
+        }
+        setY(y){
+            this.y=y;
+        }
+        setColor(){
+            this.color=this.color;
+        }
+         drawRectangle(){
             let canvas = document.getElementById("drawRectangle");
             let ctx = canvas.getContext('2d');
-            ctx.fillStyle = '#fa4b2a';
-            ctx.fillRect(10, 10, this.width, this.height)
+            ctx.fillStyle = this.getColor();
+            ctx.fillRect(this.x, this.y, this.width, this.height)
         }
     }
-    let rectangle=new Rectangle(300,200)
+    let rectangle=new Rectangle(300,200,10,10,"red")
     rectangle.drawRectangle();
 
 
