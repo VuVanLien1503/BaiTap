@@ -6,16 +6,23 @@
 </head>
 <body>
 <script>
-    function insertNumberToArray(index, number, arr) {
+    function insertNumberToArray(index, number,arr) {
+        let array=[];
         if (index < 0 || index > arr.length) {
             return arr;
         } else {
-            arr.splice(index, 0, number)
+            for (let i = 0; i <arr.length ; i++) {
+                    array.push(arr[i])
+                    if (i==index){
+                        array.push(number)
+                    }
+            }
+
         }
-        return arr;
+        return array;
     }
 
-    let index = 3;
+    let index = 2;
     let number = 5;
     let array = [1, 2, 3, 4, 5];
     alert(insertNumberToArray(index, number, array))

@@ -11,25 +11,25 @@
     class Rectangle{
         constructor(width,height) {
             this.width=width;
-            this.heidth=height;
+            this.height=height;
         }
         getWidth(){
             return this.width;
         }
         getHeight(){
-            return this.heidth;
+            return this.height;
         }
         setWidth(width){
             this.width=width;
         }
         setHeight(height){
-            this.heidth=height
+            this.height=height
         }
          drawRectangle(width,height){
             let canvas = document.getElementById("drawRectangle");
             let ctx = canvas.getContext('2d');
             ctx.fillStyle = '#fa4b2a';
-            ctx.fillRect(10, 10, this.width, this.heidth)
+            ctx.fillRect(10, 10, this.width, this.height)
         }
     }
     let rectangle=new Rectangle(300,200)
